@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<script src="scripts/require.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<title>Test task "Carousel"</title>
+		<script>
+		require([ 'scripts/main' ], function (main){
+			window.onload = function(event){
+				main.onloadWindow();
+			}
+			window.onresize = function(event){
+				main.resize();
+			}
+			
+			document.querySelector("div.slide-navigation ul").onclick = function(event){
+				main.clickSlideNavigation(event);
+			}
+			
+			document.querySelector("#prev-slide").onclick = function(event){
+				main.clickPrevSlide(event);
+			}
+			
+			document.querySelector("#next-slide").onclick = function(event){
+				main.clickNextSlide(event);
+			}
+		});
+		</script>
+
+	</head>
+	<body>
+    <div id="slideshow-wrap">
+		<nav>
+			<a href="#" id="prev-slide"><</a>
+			<a href="#" id="next-slide">></a>
+		</nav> 
+        <div id="slideshow-inner">
+             <ul>
+               <li id="slide1"><img data-path="slides/" data-name="1.jpg"/></li>
+				<li id="slide2"><img data-path="slides/" data-name="2.jpg"/></li>
+                <li id="slide3"><img data-path="slides/" data-name="3.jpg"/></li>
+                <li id="slide4"><img data-path="slides/" data-name="4.jpg"/></li>
+				<li id="slide5"><img data-path="slides/" data-name="5.jpg"/></li>
+                <li id="slide6"><img data-path="slides/" data-name="6.jpg"/></li>
+            </ul>
+		</div>
+		<div class="slide-navigation">
+			<ul>
+			</ul>
+		</div>
+    </div>
+	<script>
+
+	</script>
+	</body>
+</html>
